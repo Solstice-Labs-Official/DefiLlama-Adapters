@@ -16,6 +16,7 @@ const { STAKE_POOL_LAYOUT } = require("./layouts/stakePool");
 const { JITO_VAULT_LAYOUT, VAULT_OPERATOR_DELEGATION_LAYOUT } = require("./layouts/jito-layout");
 const { BYREAL_LIQUIDITY_STATE_LAYOUT_CLMM } = require("./layouts/byreal-layout");
 const { PANCAKESWAP_V3_POOL_LAYOUT } = require("./layouts/pancakeswap-v3-layout");
+const { USX_STABLE_DEPOSITORY_LAYOUT } = require("./layouts/usx-layout");
 
 const parseReserve = (info) => {
   const pubkey = PublicKey.default
@@ -79,7 +80,8 @@ const customDecoders = {
   meteoraStablePool: defaultParseLayout(METEORA_STABLE_SWAP_LAYOUT),
   zeusGuardianSetting: defaultParseLayout(ZEUS_GUARDIAN_SETTING_LAYOUT),
   byrealCLMM: defaultParseLayout(BYREAL_LIQUIDITY_STATE_LAYOUT_CLMM),
-  pancakeswapV3Pool: defaultParseLayout(PANCAKESWAP_V3_POOL_LAYOUT)
+  pancakeswapV3Pool: defaultParseLayout(PANCAKESWAP_V3_POOL_LAYOUT),
+  usxProgram: defaultParseLayout(USX_STABLE_DEPOSITORY_LAYOUT)
 }
 
 function decodeAccount(layout, accountInfo) {
